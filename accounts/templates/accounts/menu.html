@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Menu{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+{% endblock %}
+
+{% block menu-content %}
+    <div class="menu-container">
+        <div class="nav-container">
+            <div class="navbar">            
+                <ul class="navbar-ul">
+                    <li class="menu-title">Seja Bem-vindo(a)!</li>
+                    <li class="link-logout-li"><a class="link-logout" href="{% url 'logout' %}">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-image">
+            <img src="{% static 'images/menu.png' %}" alt="Login">
+        </div>
+    </div>
+{% endblock %}

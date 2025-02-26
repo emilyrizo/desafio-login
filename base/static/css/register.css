@@ -1,0 +1,163 @@
+body {
+  background-color: #1C1D21;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-form {
+  max-width: 50rem;
+  margin-right: 10rem;
+}
+
+.register-header {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  justify-content: center;
+}
+
+.register-header h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #e4e4e4;
+}
+
+.register-header p {
+  font-size: 1.6rem;
+  color: #7dd0e0;
+  margin-top: 1.6rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.name-box, .email-box, .password1-box, .password2-box {
+  position: relative; 
+  margin-bottom: 2.4rem;
+}
+
+.name-box input, .email-box input, .password1-box input, .password2-box input {
+  width: 100%;
+  padding: 1.6rem;
+  border: 1px solid #7b4df3;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  background-color: transparent;
+  color: #fff;
+}
+
+.name-box input::placeholder, .email-box input::placeholder,
+.password1-box input::placeholder, .password2-box input::placeholder {
+    font-family: 'Montserrat', sans-serif; 
+    color: #fff;
+    opacity: 0.4;
+    font-size: 1.6rem; 
+}
+
+.name-box input:focus, .email-box input:focus,
+.password1-box .password-input-container input:focus, .password2-box .password-input-container input:focus {
+  border-color: #7dd0e0;
+  outline: none;
+}
+
+.name-box label, .email-box label, .password1-box label, .password2-box label {
+  position: absolute;
+  top: -0.8rem; 
+  margin-left: 1rem;
+  background-color: #1C1D21; 
+  padding: 0 0.6rem;
+  font-size: 1.6rem;
+  color: #fff;
+  z-index: 2
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .6rem;
+}
+
+.btn-register, .btn-cancel {
+  width: 48%;
+  padding: 1.6rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #7b4df3;
+  color: #ffffff;
+  transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+.btn-register:hover, .btn-cancel:hover {
+  background-color: #6a3edb;
+  box-shadow: inset 1px 1px 2px #4e2aaf, inset -1px -1px 2px #9b72ff;
+}
+
+.btn-register:active, .btn-cancel:active {  
+  transform: translateY(1px);
+  box-shadow: inset 2px 2px 3px #4e2aaf, inset -2px -2px 3px #9b72ff;
+}
+
+.register-image {
+  max-width: 54rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.error-message {
+  color: #7dd0e0;
+  font-size: 1.3rem;
+  margin-top: 0.3rem;
+  display: block;
+  padding-left: .5rem;
+}
+
+.password-box input[type="password"],
+.password-box input[type="text"] {
+  width: 100%;
+  padding: 1.6rem;
+  padding-right: 4rem;
+  border: 1px solid #7b4df3;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  background-color: transparent;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.toggle-password i {
+  position: absolute;
+  right: 1.6rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ffffff;
+  opacity: 0.4;
+  font-size: 1.6rem; 
+  z-index: 1;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.toggle-password i:hover {
+  color: #ffffff;
+  opacity: 0.9;
+}

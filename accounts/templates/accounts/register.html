@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Registrar{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block register-content %}
+    <div class="register-container">        
+        <form method="post" class="register-form">
+            <div class="register-header">
+                <h1>Faça seu cadastro</h1>
+                <p>Crie sua conta agora mesmo!</p>
+            </div>
+            {% csrf_token %}
+
+            <div class="form-group">
+                <div class="name-box">
+                    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                    {{ form.name }}
+
+                    {% if form.name.errors %}
+                        <small class="error-message">{{ form.name.errors }}</small>
+                    {% endif %}
+                </div>
+
+                <div class="email-box">
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                    {{ form.email }}
+
+                    {% if form.email.errors %}
+                        <small class="error-message">{{ form.email.errors }}</small>
+                    {% endif %}
+                </div>
+
+                <div class="password1-box">
+                    <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+                    <div class="password-input-container">
+                        {{ form.password1 }}
+                        <span class="toggle-password" onclick="togglePasswordVisibility(this.previousElementSibling)">
+                            <i id="password-icon" class="fa-solid fa-eye"></i>
+                        </span>
+                    </div>
+
+                    {% if form.password1.errors %}
+                        <small class="error-message">{{ form.password1.errors }}</small>
+                    {% endif %}
+                </div>
+
+                <div class="password2-box">
+                    <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+                    <div class="password-input-container">
+                        {{ form.password2 }}
+                        <span class="toggle-password" onclick="togglePasswordVisibility(this.previousElementSibling)">
+                            <i id="password-icon" class="fa-solid fa-eye"></i>
+                        </span>
+                    </div>
+
+                    {% if form.password2.errors %}
+                        <small class="error-message">{{ form.password2.errors }}</small>
+                    {% endif %}
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn-register">Registrar</button>
+                    <button type="button" class="btn-cancel" onclick="redirectToLogin()">Cancelar</button>
+                </div>
+            </div>
+        </form>
+        <div class="register-image">
+            <img src="{% static 'images/img-register.png' %}" alt="register">
+        </div>
+    </div>
+{% endblock %}
+{% block extra_scripts %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        function redirectToLogin() {
+            window.location.href = "{% url 'login' %}";
+        }
+    </script>
+{% endblock %}
+ 

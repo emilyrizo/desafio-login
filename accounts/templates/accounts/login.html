@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block login-content %}
+    <div class="login-container">    
+        <form method="post" class="login-form">
+            <div class="login-header">
+                <h1>Bem-vindo(a) de volta!</h1>
+                <p>Faça o login para acessar sua conta</p>
+            </div>
+            {% csrf_token %}            
+
+            <div class="form-group">
+                <div class="email-box">
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                    {{ form.email }}
+
+                    {% if form.email.errors %} 
+                        <small class="error-message-email">{{ form.email.errors }}</small> 
+                    {% endif %}
+                </div>
+
+                <div class="password-box">
+                    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                    <div class="password-input-container">
+                        {{ form.password }}
+                        <span class="toggle-password" onclick="togglePasswordVisibility(this.previousElementSibling)">
+                            <i id="password-icon" class="fa-solid fa-eye"></i>
+                        </span>
+                    </div>
+
+                    {% if messages %}
+                        <div class="error-message">
+                            {% for message in messages %}
+                                <small>{{ message }}</small>
+                            {% endfor %}
+                        </div>
+                    {% endif %}   
+                </div>
+                <button type="submit" class="btn-login">Entrar</button>
+            </div>
+            <div class="login_register">
+                <p>Ainda não tem uma conta? <a href="{% url 'register' %}">Registre-se!</a></p>
+            </div>            
+        </form>
+        <div class="login-image">
+            <img src="{% static 'images/img-login.png' %}" alt="Login">
+        </div>        
+    </div>
+{% endblock %}
+{% block extra_scripts %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock %}
