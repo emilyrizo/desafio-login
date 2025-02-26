@@ -49,9 +49,10 @@ FROM_EMAIL=email@gmail.com
 
 ## 🚀 Executando a Aplicação
 
-### 5️⃣ Aplicar as Migrações
+### 5️⃣ Criar e Aplicar as Migrações
 
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
