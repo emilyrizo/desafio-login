@@ -26,7 +26,7 @@ cd desafio-login
 ```bash
 python -m venv venv
 # Ativar (no Windows com bash)
-source venv\Scripts\activate
+source venv/Scripts/activate
 ```
 
 ### 3️⃣ Instalar as Dependências
